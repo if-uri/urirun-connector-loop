@@ -1,0 +1,2 @@
+[urirun.bindings]
+loop = urirun_connector_loop.core:urirun_bindings

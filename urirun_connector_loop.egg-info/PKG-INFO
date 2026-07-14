@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: urirun-connector-loop
+Version: 0.1.0
+Summary: Zamknięta pętla korekcyjna: czyta gap+watch i sama stosuje poprawną akcję (loop://).
+Author: Tom Sapletta
+License: Apache-2.0
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: urirun>=0.4.14
+
+# urirun-connector-loop
+
+`loop://` — zamknięta pętla korekcyjna. Czyta `gap://scan` + `watch://detect`, mapuje stan
+ticketu na jedną poprawną akcję i (apply=True) ją stosuje: SAFE auto (circuit-break dead-loop,
+escalate needs_input→human://), RISKY za bramką (run-agent), REPORT (brak kryteriów).
+Odpalany cyklicznie (cron) czyni luki źródłem autonomicznych reakcji.
